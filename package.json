@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "db:start": "docker compose -f ./.devcontainer/docker-compose.yaml up -d",
+    "db:stop": "docker compose -f ./.devcontainer/docker-compose.yaml down"
+  }
+}
