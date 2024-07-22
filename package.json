@@ -14,6 +14,7 @@
 		"db:migrate": "turbo db:migrate",
 		"db:start": "docker compose -f ./.devcontainer/docker-compose.yaml up -d",
 		"db:stop": "docker compose -f ./.devcontainer/docker-compose.yaml down",
+		"db:studio": "turbo db:studio",
 		"dev": "turbo dev",
 		"format": "prettier --write .",
 		"prepare": "husky"
