@@ -1,0 +1,13 @@
+{
+	"name": "@ourspace/tsconfig",
+	"version": "0.0.0",
+	"private": true,
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:andrew-peterson0429/ourspace.git",
+		"directory": "packages/tsconfig"
+	},
+	"files": [
+		"base.json"
+	]
+}

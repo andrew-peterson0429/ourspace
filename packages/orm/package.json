@@ -1,0 +1,30 @@
+{
+	"name": "@ourspace/orm",
+	"version": "0.0.0",
+	"private": true,
+	"main": "./src/index.ts",
+	"types": "./src/index.ts",
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:andrew-peterson0429/ourspace.git",
+		"directory": "packages/orm"
+	},
+	"scripts": {
+		"db:generate": "drizzle-kit generate",
+		"db:migrate": "drizzle-kit migrate"
+	},
+	"peerDependencies": {
+		"typescript": "5.5.3"
+	},
+	"devDependencies": {
+		"@ourspace/tsconfig": "workspace:*",
+		"@types/pg": "8.11.6",
+		"drizzle-kit": "0.22.5"
+	},
+	"dependencies": {
+		"dayjs": "1.11.11",
+		"drizzle-orm": "0.31.2",
+		"pg": "8.12.0",
+		"uuidv7": "1.0.1"
+	}
+}

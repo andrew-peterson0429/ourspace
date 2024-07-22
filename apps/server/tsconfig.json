@@ -1,0 +1,13 @@
+{
+	"extends": "@ourspace/tsconfig/base.json",
+	"compilerOptions": {
+		"noEmit": false,
+		"emitDeclarationOnly": true,
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["./src/*"]
+		}
+	},
+	"exclude": ["node_modules"],
+	"references": [{ "path": "../../packages/orm/tsconfig.json" }]
+}

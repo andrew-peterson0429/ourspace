@@ -1,6 +1,32 @@
 {
-  "scripts": {
-    "db:start": "docker compose -f ./.devcontainer/docker-compose.yaml up -d",
-    "db:stop": "docker compose -f ./.devcontainer/docker-compose.yaml down"
-  }
+	"name": "ourspace",
+	"private": true,
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:andrew-peterson0429/ourspace.git"
+	},
+	"workspaces": [
+		"apps/*",
+		"packages/*"
+	],
+	"scripts": {
+		"db:generate": "turbo db:generate",
+		"db:migrate": "turbo db:migrate",
+		"db:start": "docker compose -f ./.devcontainer/docker-compose.yaml up -d",
+		"db:stop": "docker compose -f ./.devcontainer/docker-compose.yaml down",
+		"dev": "turbo dev",
+		"format": "prettier --write .",
+		"prepare": "husky"
+	},
+	"peerDependencies": {
+		"typescript": "5.5.3"
+	},
+	"devDependencies": {
+		"@ourspace/tsconfig": "workspace:*",
+		"bun-types": "1.1.20",
+		"husky": "9.0.11",
+		"prettier": "3.3.2",
+		"turbo": "2.0.1"
+	},
+	"packageManager": "bun@1.1.20"
 }

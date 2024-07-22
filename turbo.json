@@ -1,0 +1,16 @@
+{
+	"$schema": "https://turborepo.org/schema.json",
+	"tasks": {
+		"db:generate": {
+			"cache": false,
+			"outputs": ["src/drizzle/migrations/**"]
+		},
+		"db:migrate": {
+			"cache": false
+		},
+		"dev": {
+			"persistent": true,
+			"cache": false
+		}
+	}
+}
