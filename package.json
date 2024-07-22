@@ -10,8 +10,11 @@
 		"packages/*"
 	],
 	"scripts": {
+		"db:generate": "turbo db:generate",
+		"db:migrate": "turbo db:migrate",
 		"db:start": "docker compose -f ./.devcontainer/docker-compose.yaml up -d",
 		"db:stop": "docker compose -f ./.devcontainer/docker-compose.yaml down",
+		"dev": "turbo dev",
 		"format": "prettier --write .",
 		"prepare": "husky"
 	},
