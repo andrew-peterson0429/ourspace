@@ -15,6 +15,10 @@
 		"dev": {
 			"persistent": true,
 			"cache": false
+		},
+		"release": {
+			"dependsOn": ["^release"],
+			"outputLogs": "new-only"
 		}
 	}
 }

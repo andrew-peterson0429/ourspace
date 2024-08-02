@@ -22,7 +22,7 @@
 	},
 	"customizations": {
 		"vscode": {
-			"extensions": ["esbenp.prettier-vscode", "bradlc.vscode-tailwindcss"]
+			"extensions": ["mhutchie.git-graph", "esbenp.prettier-vscode", "bradlc.vscode-tailwindcss"]
 		}
 	}
 }

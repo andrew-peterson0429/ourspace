@@ -12,13 +12,15 @@
 	"scripts": {
 		"db:generate": "drizzle-kit generate",
 		"db:migrate": "drizzle-kit migrate",
-		"db:studio": "drizzle-kit studio"
+		"db:studio": "drizzle-kit studio",
+		"release": "release-it --ci"
 	},
 	"peerDependencies": {
 		"typescript": "5.5.3"
 	},
 	"devDependencies": {
 		"@ourspace/tsconfig": "workspace:*",
+		"@ourspace/release-it": "workspace:*",
 		"@types/pg": "8.11.6",
 		"drizzle-kit": "0.22.5"
 	},

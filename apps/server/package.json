@@ -12,13 +12,15 @@
 		"directory": "apps/server"
 	},
 	"scripts": {
-		"dev": "bun run --hot src/index.ts"
+		"dev": "bun run --hot src/index.ts",
+		"release": "release-it --ci"
 	},
 	"peerDependencies": {
 		"typescript": "5.5.3"
 	},
 	"devDependencies": {
 		"@ourspace/tsconfig": "workspace:*",
+		"@ourspace/release-it": "workspace:*",
 		"bun-types": "1.1.20"
 	},
 	"dependencies": {
