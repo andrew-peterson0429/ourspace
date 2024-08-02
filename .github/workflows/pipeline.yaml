@@ -1,0 +1,50 @@
+name: CI/CD
+on:
+  push:
+    branches: [ feat/auth ]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup SSH keys
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          known_hosts: github.com
+
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.15.1'
+
+      - name: Setup turbo cache
+        uses: actions/cache@v3
+        with:
+          path: '.turbo'
+          key: turbo-${{ github.ref_name }}-${{ github.sha }}
+          restore-keys: |
+            turbo-${{ github.ref_name }}-
+            turbo-master-
+
+      - name: Install deps
+        if: steps.node-cache.outputs.cache-hit != 'true'
+        run: bun install --frozen-lockfile --ignore-scripts
+
+      - name: Setup git
+        run: |
+          git config user.name "$GIT_USER_NAME"
+          git config user.email "$GIT_USER_EMAIL"
+        env:
+          GIT_USER_NAME: ${{ github.actor }}
+          GIT_USER_EMAIL: 'action@github.com'
+
+      - name: Release
+        run: bun run release --cache-dir=.turbo
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
